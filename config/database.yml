@@ -19,7 +19,7 @@ development:
   pool: 5
   username: 
   password:
-  host: 127.0.0.1
+  # host: 127.0.0.1
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -46,7 +46,7 @@ test:
   pool: 5
   username: 
   password:
-  host: 127.0.0.1
+  # host: 127.0.0.1
 
 production:
   adapter: postgresql
@@ -55,4 +55,4 @@ production:
   pool: 5
   username: 
   password:
-  host: 127.0.0.1
+  # host: 127.0.0.1
