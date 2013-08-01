@@ -9,4 +9,13 @@ expect(page).to have_content('Log In')
 expect(page).to have_content('Sign Up')
 end
 
+it 'user can sign up for website' do 
+visit new_user_registration_path
+expect(page).to have_content('First name')
+expect(page).to have_content('Last name')
+expect(page).to have_content('Email')
+expect(page).to have_content('Password')
+
+end
+
 end
