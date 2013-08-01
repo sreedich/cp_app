@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'rails_admin'
 gem 'devise'
+gem 'cancan'
 
 group :test, :development do 
   gem 'rspec-rails'
