@@ -1,9 +1,21 @@
 <div class="row">
-<div class="span3 offset8">
-
-    <%= image_tag 'crash.png' %> <br>
-    <h4 id='welcome-message'>Welcome CrashPadder!</h4>
-    <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-success btn-block', id: 'button1' %><br>
-    <span>or &nbsp</span><%= link_to 'Log In', new_user_session_path %> 
-</div>    
+  <div class= 'span3 offset9' id= 'image'> <%= image_tag 'crash.png' %> </div> 
 </div>
+
+<br>
+
+<div class="row">
+  <div class= 'span5 offset7'> <p id='welcome-message'>Welcome CrashPadder!</p> </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class= 'span3 offset8'> <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-info btn-block', id: 'button1' %> </div> 
+</div>
+
+<div class="row">  
+  <div class= 'span3 offset9' id='log-in'> <span>or &nbsp</span><%= link_to 'Log In', new_user_session_path %> </div>   
+</div>
+
+
