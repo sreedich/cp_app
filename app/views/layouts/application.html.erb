@@ -15,10 +15,11 @@
 <% if current_user.try(:admin?) %>
   <%= link_to 'Backend', rails_admin_path %>
 <% end %>
+<div class="container"> 
   <%= yield %>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+</div>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 </body>
 </html>
