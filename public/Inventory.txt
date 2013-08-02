@@ -1,0 +1,34 @@
+Kitchen:
+Milk (Whole & 2%)
+Sticks of Butter
+Sugar
+Extra Virigin Olive oil 
+Vegetable Oil
+Salt
+Pepper
+Green apples
+Coffee (1 dark roast and 1 medium roast)
+Tea (Just black)
+Artificial Sweetener
+Paper towels
+dishwasher detergent
+Hand Soap
+
+Bathroom:
+Toilet paper
+Hand soap
+Clorox wipes
+shampoo
+conditioner
+body wash
+
+Supplies:
+masking tape
+idea paint markers
+
+Misc:
+
+
+
+It might also be useful to add the kitchenware/silverware inventory into your system. If a glass or plate gets broken someone could note it and we would know that we need to buy more.
+
