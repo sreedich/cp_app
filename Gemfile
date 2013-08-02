@@ -9,6 +9,7 @@ gem 'pg'
 gem 'rails_admin'
 gem 'devise'
 gem 'cancan'
+gem 'simple_form'
 
 group :test, :development do 
   gem 'rspec-rails'
