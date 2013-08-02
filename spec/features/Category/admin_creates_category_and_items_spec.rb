@@ -8,7 +8,7 @@ describe 'admin creates a category with items' do
   it 'creates a category' do
     visit new_user_registration_path 
     sign_up_as(user)
-    visit category_path 
+    visit categories_path 
     expect(page).to have_content('Category')
   end 
 
