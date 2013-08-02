@@ -14,7 +14,9 @@
 
 <% if current_user.try(:admin?) %>
   <%= link_to 'Backend', rails_admin_path %>
+  <%= link_to 'Add a New Category', new_category_path %>
 <% end %>
+
 <div class="container"> 
   <%= yield %>
 </div>
