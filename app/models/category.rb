@@ -1,4 +1,5 @@
+
 class Category < ActiveRecord::Base
   attr_accessible :title
-  # validate_precense_of :title 
+  validates_presence_of :title 
 end
