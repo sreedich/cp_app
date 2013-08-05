@@ -1,7 +1,19 @@
 class CategoriesController < ApplicationController
 
   def index
-    @category = Category.all 
+    @category = Category.all
+     
+  end
+
+  def show
+    @category = Category.find(params[:id])
+    @item = @category.items.new
+
+    # if @category.items.save
+    #   redirect_to root_path
+    # end
+
+    
   end
   
   def new

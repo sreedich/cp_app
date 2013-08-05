@@ -2,5 +2,7 @@ Category
 
 
 <% @category.each do |f| %>
-  <%= f.title %>
+  <%= f.title %> 
+  <%= link_to 'Add Items To This Category', category_path(f.id) %>
 <% end %> 
+

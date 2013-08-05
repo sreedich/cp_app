@@ -7,7 +7,9 @@ CrashpadApp::Application.routes.draw do
   
   resources :users 
 
-  resources :categories
+  resources :categories do 
+    resources :items 
+  end
 
 
   # The priority is based upon order of creation:
