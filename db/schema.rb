@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130805150241) do
+ActiveRecord::Schema.define(:version => 20130805185832) do
 
   create_table "categories", :force => true do |t|
     t.string   "title",      :null => false
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20130805150241) do
     t.integer  "category_id", :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "state"
   end
 
   create_table "rails_admin_histories", :force => true do |t|

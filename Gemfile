@@ -10,6 +10,7 @@ gem 'rails_admin'
 gem 'devise'
 gem 'cancan'
 gem 'simple_form'
+gem 'state_machine'
 
 group :test, :development do 
   gem 'rspec-rails'
