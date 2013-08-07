@@ -1,3 +1,6 @@
+uhhhhhhhh Steve & Jide - I see you guys building stuff, Nice work! Feel free to
+make feature branches and submit pull requests to me.
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
