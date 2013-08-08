@@ -18,6 +18,13 @@ describe 'user changing status of an item' do
       expect(page).to have_content(item.name)
     end
 
+    it 'user can change the status of an item' do 
+      visit categories_path
+      click_button 'In Stock'
+      visit categories_path
+      expect(page).to have_button('Out of Stock')
+    end
+
 
   end
 end

@@ -2,5 +2,5 @@
 class Category < ActiveRecord::Base
   attr_accessible :title
   validates_presence_of :title 
-  has_many :items 
+  has_many :items, dependent: :destroy
 end
