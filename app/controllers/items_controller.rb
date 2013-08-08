@@ -16,7 +16,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
 
     if @item.out_of_stock?
-      @item.replenished
+      if current_user.admin?
+        @item.replenished
+      end
     else
       @item.consumed
     end

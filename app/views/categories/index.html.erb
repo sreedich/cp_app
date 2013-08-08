@@ -1,8 +1,9 @@
-Category 
-
 
 <% @category.each do |category| %>
-  <strong><%= category.title %></strong><br>
+  <h1><%= category.title %></h1>
+  <% if current_user.try(:admin?) %>
+    <%= link_to 'Add Items To This Category', category_path(category.id) %><br>
+  <% end %> 
   <% category.items.each do |item| %> 
     <%= item.name %>
     <% if item.out_of_stock? %>
@@ -28,9 +29,6 @@ Category
   
 
 
-  <% end %>
-  <% if current_user.try(:admin?) %>
-    <%= link_to 'Add Items To This Category', category_path(category.id) %><br>
-  <% end %>  
+  <% end %> 
 <% end %> 
 
