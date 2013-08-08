@@ -1,8 +1,13 @@
 Category 
 
 
-<% @category.each do |f| %>
-  <%= f.title %> 
-  <%= link_to 'Add Items To This Category', category_path(f.id) %>
+<% @category.each do |category| %>
+  <%= category.title %>
+  <% category.items.each do |item| %> 
+    <%= item.name %>
+  <% end %>
+  <% if current_user.try(:admin?) %>
+    <%= link_to 'Add Items To This Category', category_path(category.id) %>
+  <% end %>  
 <% end %> 
 
