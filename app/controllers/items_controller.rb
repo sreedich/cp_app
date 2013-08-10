@@ -1,7 +1,5 @@
 class ItemsController < ApplicationController
 
-
-
   def create
     @category = Category.find(params[:category_id])
     @item = @category.items.new(params[:item]) 
@@ -14,13 +12,17 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-
-    if @item.out_of_stock?
+# CHECKS TO SEE CURRENT STATE OF ITEM 
+    if @item.in_stock?
+      @item.nearly_consumed
+    elsif @item.low_stock?
+      @item.consumed 
+    else @item.out_of_stock?
+# CHECKS TO SEE IF USER IS ADMIN 
+# ONLY ADMIN CAN CHANGE STATE FROM OUT OF STOCK TO IN STOCK
       if current_user.admin?
         @item.replenished
       end
-    else
-      @item.consumed
     end
     
     if @item.update_attributes(params[:state])
@@ -29,5 +31,4 @@ class ItemsController < ApplicationController
       redirect_to root_path
     end
   end
-
 end
