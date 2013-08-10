@@ -4,15 +4,18 @@ class Item < ActiveRecord::Base
   belongs_to :category 
 
 state_machine initial: :in_stock do 
+  
   event :consumed do 
-    transition :in_stock => :out_of_stock 
+    transition :low_stock => :out_of_stock 
   end 
+
+  event :nearly_consumed do
+    transition :in_stock => :low_stock
+  end
 
   event :replenished do 
     transition :out_of_stock => :in_stock
   end 
-
-
 end 
 
 end
