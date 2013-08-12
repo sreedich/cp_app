@@ -2,10 +2,12 @@ class ItemsController < ApplicationController
 
   def create
     @category = Category.find(params[:category_id])
-    @item = @category.items.new(params[:item]) 
-
-    if @item.save!
+    @item = @category.items.new(params[:item])
+    @event = @category.items.last
+    
+    if @item.save!    
       redirect_to category_path(@category)
+      Event.create(time: @event.created_at, state: @event.state, item_id: @event.id)
     else
     end 
   end

@@ -15,7 +15,7 @@ describe 'event change is recorded' do
     previous_count = Event.count
     fill_in 'Name', with: 'Paper Towels'
     click_on 'Submit'
-    # expect(Event.count).to eql(previous_count + 1)
+    expect(Event.count).to eql(previous_count + 1)
     expect(Item.last.created_at).to eql(Item.last.events.first.time)
   end 
 
