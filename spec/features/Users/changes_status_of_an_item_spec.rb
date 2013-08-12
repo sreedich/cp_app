@@ -22,7 +22,7 @@ describe 'user changing status of an item' do
       visit categories_path
       click_button 'In Stock'
       visit categories_path
-      expect(page).to have_button('Out of Stock')
+      expect(page).to have_button('Low Stock')
     end
 
 

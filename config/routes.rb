@@ -8,7 +8,9 @@ CrashpadApp::Application.routes.draw do
   resources :users 
 
   resources :categories do 
-    resources :items 
+    resources :items do
+      resources :events
+    end 
   end
 
 
