@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130812213616) do
+ActiveRecord::Schema.define(:version => 20130813175217) do
 
   create_table "categories", :force => true do |t|
     t.string   "title",      :null => false
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(:version => 20130812213616) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "state"
+  end
+
+  create_table "properties", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "address",    :null => false
+    t.string   "city",       :null => false
+    t.string   "state",      :null => false
+    t.integer  "zip",        :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "rails_admin_histories", :force => true do |t|
