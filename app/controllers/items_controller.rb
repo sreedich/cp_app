@@ -23,12 +23,13 @@ class ItemsController < ApplicationController
 # CHECKS TO SEE IF USER IS ADMIN 
 # ONLY ADMIN CAN CHANGE STATE FROM OUT OF STOCK TO IN STOCK
       if current_user.admin?
-        @item.replenished
+       @item.replenished
       end
     end
     
     if @item.update_attributes(params[:state])
       redirect_to categories_path
+      Event.create(time: @item.updated_at, state: @item.state, item_id: @item.id)
     else
       redirect_to root_path
     end
