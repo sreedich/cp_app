@@ -2,6 +2,7 @@ class Item < ActiveRecord::Base
   attr_accessible :category_id, :name, :state 
   validates_presence_of :category_id, :name 
   belongs_to :category 
+  has_many :events, dependent: :destroy
 
 state_machine initial: :in_stock do 
   
