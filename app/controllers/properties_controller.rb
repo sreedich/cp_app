@@ -1,15 +1,17 @@
 class PropertiesController < ApplicationController 
+load_and_authorize_resource
+
 
   def index
-    @properties = Property.all
+    # @properties = Property.all
   end
 
   def new 
-    @property = Property.new 
+    # @property = Property.new 
   end 
 
   def create
-    @property = Property.create(params[:property])
+    # @property = Property.create(params[:property])
 
       if @property.save!
       redirect_to properties_path, notice: 'property successfully created'

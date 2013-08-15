@@ -9,7 +9,12 @@ class Ability
       if user.admin?
         can :manage, :all
       else
-        can :read, :all
+        cannot :manage, Property
+        cannot :create, Category
+        can :update, Category
+        cannot :destroy, Category
+        can :read, Category
+
       end
     #
     # The first argument to `can` is the action you are giving the user 
