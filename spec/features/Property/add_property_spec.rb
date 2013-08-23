@@ -39,6 +39,13 @@ end
     expect(page).to have_content('Add a Category')
   end 
 
-  
+  it 'admin adds property category' do
+    previous_count = Category.count 
+    visit property_path(property)
+    click_on 'Add a Category'
+    fill_in 'Title', with: 'Bathroom'
+    click_on 'Submit'
+    expect(Category.count).to eql(previous_count + 1)
+  end 
 
 end 
