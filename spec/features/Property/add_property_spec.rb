@@ -32,5 +32,6 @@ end
     expect(page).to have_content(property.name)
   end 
 
+  
 
 end 

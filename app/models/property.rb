@@ -1,7 +1,7 @@
 class Property < ActiveRecord::Base
   attr_accessible :address, :city, :name, :state, :zip
   validates_presence_of :address, :city, :name, :state, :zip
-
+  has_many :categories 
 
 STATES = ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 'HI',
  'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN',

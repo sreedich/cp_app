@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20130813175217) do
     t.string   "title",      :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "property_id", :null => false
   end
 
   create_table "events", :force => true do |t|
