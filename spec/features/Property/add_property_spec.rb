@@ -32,6 +32,13 @@ end
     expect(page).to have_content(property.name)
   end 
 
+  it 'admin navigates to property page' do
+    property 
+    visit properties_path
+    click_on 'Edit'
+    expect(page).to have_content('Add a Category')
+  end 
+
   
 
 end 
