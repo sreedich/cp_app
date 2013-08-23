@@ -10,10 +10,7 @@ before(:each) do
 end
 
   let!(:admin){FactoryGirl.create(:admin)} 
-
-
-
-  
+  let(:property){FactoryGirl.create(:property)}
 
   it 'admin adds a property' do 
     previous_count = Property.count 
@@ -26,7 +23,14 @@ end
     fill_in 'Zip', with: '00000'
     click_on 'Submit'
     expect(Property.count).to eql(previous_count + 1)
-
+    expect(current_path).to eql(properties_path)
   end 
+
+  it 'admin sees list of properties' do 
+    property 
+    visit properties_path
+    expect(page).to have_content(property.name)
+  end 
+
 
 end 
