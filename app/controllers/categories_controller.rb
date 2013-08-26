@@ -27,7 +27,7 @@ class CategoriesController < ApplicationController
     @category = @property.categories.new(params[:category])
 
      if @category.save!
-      redirect_to categories_path, notice: 'category successfully created'
+      redirect_to property_path(@property), notice: 'category successfully created'
     else
       render action: 'new'
     end 

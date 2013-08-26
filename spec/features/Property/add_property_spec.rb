@@ -11,6 +11,7 @@ end
 
   let!(:admin){FactoryGirl.create(:admin)} 
   let(:property){FactoryGirl.create(:property)}
+ 
 
   it 'admin adds a property' do 
     previous_count = Property.count 
@@ -46,6 +47,14 @@ end
     fill_in 'Title', with: 'Bathroom'
     click_on 'Submit'
     expect(Category.count).to eql(previous_count + 1)
+  end 
+
+  it 'display list of categories on property page' do 
+    visit property_path(property)
+    click_on 'Add a Category'
+    fill_in 'Title', with: 'Bathroom'
+    click_on 'Submit'
+    expect(page).to have_content(property.categories.last.title)
   end 
 
 end 
