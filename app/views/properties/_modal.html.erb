@@ -1,0 +1,16 @@
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ <div class="modal-header">
+   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+   <h3 id="myModalLabel">Add a New Property</h3>
+ </div>
+ <div class="modal-body">
+   <%= simple_form_for @property do |f| %>
+   <%= f.input :name %>
+   <%= f.input :address %>
+   <%= f.input :city %>
+   <%= f.input :state, collection: Property::STATES  %>
+   <%= f.input :zip %>
+   <%= f.submit 'Submit' %>
+   <% end %>
+ </div>
+</div>

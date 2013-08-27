@@ -15,7 +15,7 @@ end
 
   it 'admin adds a property' do 
     previous_count = Property.count 
-    visit root_path
+    visit properties_path
     click_on 'Add a New Property'
     fill_in 'Name', with: 'Kendall Square'
     fill_in 'Address', with: '173 Charles Street'
