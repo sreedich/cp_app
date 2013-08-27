@@ -14,8 +14,8 @@
 
 <% if current_user.try(:admin?) %>
   <h4><%= link_to 'Backend', rails_admin_path %></h4>
-  <h4><%= link_to 'View Current Categories', categories_path %></h4>
  <h4><%= link_to 'Add a New Property', new_property_path %></h4>
+ <h4><%= link_to 'View Current Properties', properties_path %></h4>
 
 <% end %>
 

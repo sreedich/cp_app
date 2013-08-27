@@ -1,7 +1,7 @@
  <h4> <%= link_to 'Add a Category', new_property_category_path(@property) %></h4>
 
 <% @property.categories.each do |category| %> 
-  <%= category.title %>
+  <h4><%= category.title %></h4>
   <% if current_user.try(:admin?) %>
   <%= link_to 'Add Items To This Category', category_path(category.id) %><br> 
 <% end %> 
