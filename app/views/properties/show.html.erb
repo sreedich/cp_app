@@ -1,0 +1,35 @@
+ <h4> <%= link_to 'Add a Category', new_property_category_path(@property) %></h4>
+
+<% @property.categories.each do |category| %> 
+  <h4><%= category.title %></h4>
+  <% if current_user.try(:admin?) %>
+  <%= link_to 'Add Items To This Category', category_path(category.id) %><br> 
+<% end %> 
+
+  <!-- LIST EVERY CATEGORY AND ITEM FOR THE USER AND ADMIN TO SEE -->
+  <% category.items.each do |item| %> 
+    <%= item.name %>
+
+    <!-- CHECKS TO SEE IF AN ITEM IS OUT OF STOCK AND DISPLAYS A RED BUTTON  -->
+    <% if item.out_of_stock? %>
+      <%= simple_form_for [category, item] do |f| %>
+        <%= f.hidden_field :state %>
+        <%= f.submit "Out of Stock", :class => "btn btn-danger" %>
+      <% end %>
+    <% end %>
+    <!-- CHECKS TO SEE IF AN ITEM IS IN STOCK AND DISPLAYS A GREEN BUTTON -->
+    <% if item.in_stock? %>
+      <%= simple_form_for [category, item] do |f| %>
+        <%= f.hidden_field :state %>
+        <%= f.submit "In Stock", :class => "btn btn-success" %>
+      <% end %>
+    <% end %>
+    <!-- CHECKS TO SEE IF AN ITEM IS LOW IN STOCK AND DISPLAYS A YELLOW BUTTON  -->
+    <% if item.low_stock? %>
+      <%= simple_form_for [category, item] do |f| %>
+        <%= f.hidden_field :state %>
+        <%= f.submit "Low Stock", :class => "btn btn-warning" %>
+      <% end %>
+    <% end %>
+  <% end %>  
+<% end %>

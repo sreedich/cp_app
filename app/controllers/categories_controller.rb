@@ -17,14 +17,17 @@ class CategoriesController < ApplicationController
   end
   
   def new
-    @category = Category.new 
+    @property = Property.find(params[:property_id])
+    @category = @property.categories.build(params[:category])
+
   end
 
   def create
-    @category = Category.new(params[:category])
+    @property = Property.find(params[:property_id])
+    @category = @property.categories.new(params[:category])
 
      if @category.save!
-      redirect_to categories_path, notice: 'category successfully created'
+      redirect_to property_path(@property), notice: 'category successfully created'
     else
       render action: 'new'
     end 

@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
     end
     
     if @item.update_attributes(params[:state])
-      redirect_to categories_path
+      redirect_to :back
       Event.create(time: @item.updated_at, state: @item.state, item_id: @item.id)
     else
       redirect_to root_path
