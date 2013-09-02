@@ -1,12 +1,14 @@
+<%= render 'cat_modal' %>
+ <h4><a href="#myModal" data-toggle="modal">Add a New Category</a></h4>
 
 
- <h4> <%= link_to 'Add a Category', new_property_category_path(@property) %></h4>
+
 
 <% @property.categories.each do |category| %> 
   <h4><%= category.title %></h4>
-  <% if current_user.try(:admin?) %>
-  <%= link_to 'Add Items To This Category', category_path(category.id) %><br> 
+  <% if current_user.try(:admin?) %> 
 <% end %> 
+
 
   <!-- LIST EVERY CATEGORY AND ITEM FOR THE USER AND ADMIN TO SEE -->
   <% category.items.each do |item| %> 

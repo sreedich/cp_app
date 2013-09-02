@@ -16,11 +16,11 @@ class CategoriesController < ApplicationController
     
   end
   
-  def new
-    @property = Property.find(params[:property_id])
-    @category = @property.categories.build(params[:category])
+  # def new
+  #   @property = Property.find(params[:property_id])
+  #   @category = @property.categories.build(params[:category])
 
-  end
+  # end
 
   def create
     @property = Property.find(params[:property_id])

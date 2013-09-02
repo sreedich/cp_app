@@ -37,13 +37,13 @@ end
     property 
     visit properties_path
     click_on 'Edit'
-    expect(page).to have_content('Add a Category')
+    expect(page).to have_content('Add a New Category')
   end 
 
   it 'admin adds property category' do
     previous_count = Category.count 
     visit property_path(property)
-    click_on 'Add a Category'
+    click_on 'Add a New Category'
     fill_in 'Title', with: 'Bathroom'
     click_on 'Submit'
     expect(Category.count).to eql(previous_count + 1)
@@ -51,7 +51,7 @@ end
 
   it 'display list of categories on property page' do 
     visit property_path(property)
-    click_on 'Add a Category'
+    click_on 'Add a New Category'
     fill_in 'Title', with: 'Bathroom'
     click_on 'Submit'
     expect(page).to have_content(property.categories.last.title)
@@ -79,7 +79,7 @@ end
   end 
 
   def add_category
-    click_on 'Add a Category'
+    click_on 'Add a New Category'
     fill_in 'Title', with: 'Bathroom'
     click_on 'Submit'
   end
