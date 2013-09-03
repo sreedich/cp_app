@@ -1,10 +1,11 @@
 <%= render 'cat_modal' %>
  <h4><a href="#myModal" data-toggle="modal">Add a New Category</a></h4>
 
+<%= render '_item_modal' %>
 
 
-<!-- this is where the render item modal was located -->
 <!-- issues figure out duplication off add items link, figure out how to get item modal rendered on this page -->
+<!-- revert to old commit to see changes -->
 
 <% @property.categories.each do |category| %> 
   <h4><%= category.title %></h4>
