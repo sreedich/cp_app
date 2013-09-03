@@ -1,10 +1,8 @@
-<%= simple_form_for [@category, @item] do |f| %>
-  <%= f.input :name %>
-  <%= f.submit 'Submit' %>
-<% end %> 
+<%= render 'item_modal' %>
 
 
-<% @category.items.each do |f| %>
-  <%= f.name %> <br>
-<% end %> 
+
+
+
+
 

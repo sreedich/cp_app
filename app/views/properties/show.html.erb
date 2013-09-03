@@ -3,10 +3,13 @@
 
 
 
+<!-- this is where the render item modal was located -->
+<!-- issues figure out duplication off add items link, figure out how to get item modal rendered on this page -->
 
 <% @property.categories.each do |category| %> 
   <h4><%= category.title %></h4>
   <% if current_user.try(:admin?) %> 
+  <h4><a href="#myModal" data-toggle="modal">Add Items To This Category</a></h4>
 <% end %> 
 
 

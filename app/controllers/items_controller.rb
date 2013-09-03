@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
     @event = @category.items.last
     
     if @item.save!    
-      redirect_to category_path(@category)
+      redirect_to #
       Event.create(time: @event.created_at, state: @event.state, item_id: @event.id)
     else
     end 

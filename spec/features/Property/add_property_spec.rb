@@ -70,6 +70,7 @@ end
   it 'display list of items on property page' do
     visit property_path(property)
     add_category
+    save_and_open_page
     click_on 'Add Items To This Category'
     fill_in 'Name', with: 'Soap'
     click_on 'Submit'

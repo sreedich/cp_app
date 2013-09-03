@@ -22,7 +22,8 @@ class PropertiesController < ApplicationController
   def show
     @property = Property.find(params[:id])
     @category = @property.categories.new(params[:category])
- 
+    # @category = @property.categories.find(params[:category_id])
+    # @item = @category.items.new(params[:item])
   end 
 
 end 
