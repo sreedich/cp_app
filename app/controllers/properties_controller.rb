@@ -2,6 +2,7 @@ class PropertiesController < ApplicationController
 
   def index
     @properties = Property.all
+    @property = Property.new
   end
 
   def new 
@@ -20,6 +21,8 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+    @category = Category.new 
+    @item = Item.new 
   end 
 
 end 
